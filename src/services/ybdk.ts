@@ -25,7 +25,7 @@ export async function addCourse(course: Course) {
  */
 export async function removeCourse(courseId: number) {
   // TODO:  换成服务端的时候记得加路径参数
-  return request('/api/ybdk/course', {
+  return request('/api/ybdk/course/' + courseId, {
     method: 'DELETE'
   })
 
@@ -33,7 +33,7 @@ export async function removeCourse(courseId: number) {
 
 export async function updateCourse(course: Course) {
   // TODO: 换成服务端的时候记得加路径参数
-  return request('/api/ybdk/course', {
+  return request('/api/ybdk/course/' + course.id, {
     method: 'PUT',
     data: course,
   })
